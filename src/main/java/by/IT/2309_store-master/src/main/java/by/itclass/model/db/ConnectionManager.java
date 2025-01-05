@@ -17,6 +17,7 @@ public class ConnectionManager {
         if (cn == null || cn.isClosed()) {
             cn = DriverManager.getConnection(URL, USER, PASSWORD);
         }
+
         return cn;
     }
 }
