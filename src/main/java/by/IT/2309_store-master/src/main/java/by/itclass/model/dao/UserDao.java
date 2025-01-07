@@ -6,13 +6,11 @@ import java.sql.SQLException;
 import java.util.Map;
 
 import static by.itclass.constants.AppConst.*;
-
 public class UserDao {
     private static final String SELECT_USER = "SELECT id,name,email FROM user WHERE login = ? AND password = ?";
     private static final String INSERT_USER = "INSERT INTO user(name, email, login, password) values (?, ?, ?, ?)";
     private static final String CHECK_USER = "SELECT id FROM user WHERE login = ?";
     private static final String CHANGE_PASS = "UPDATE user SET password = ? WHERE id = ?";
-
     public User selectUser(String login, String password) {
         try (var cn = ConnectionManager.getConnection();
             var ps = cn.prepareStatement(SELECT_USER)) {
