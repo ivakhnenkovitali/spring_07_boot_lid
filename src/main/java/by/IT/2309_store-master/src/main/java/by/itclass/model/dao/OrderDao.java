@@ -11,14 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static by.itclass.constants.AppConst.*;
-
 public class OrderDao {
     public static final String INSERT_ORDER = "INSERT INTO orders(id, date, userId, address) values (?, ?, ?, ?)";
     public static final String INSERT_ORDER_ITEM = "INSERT INTO orderItem(orderId, itemType, itemId, itemPrice, quantity) values (?, ?, ?, ?, ?)";
     public static final String SELECT_ORDERS = "SELECT id, date, address FROM orders WHERE userId = ? ORDER BY id DESC";
     public static final String SELECT_ORDER = "SELECT date, address FROM orders WHERE id = ?";
     public static final String SELECT_ORDER_ITEMS = "SELECT itemType, itemId, itemPrice, quantity FROM orderItem WHERE orderId = ?";
-
     public boolean saveOrder(HttpSession session, String address) {
         var user = (User) session.getAttribute(USER_ATTR);
         var now = LocalDateTime.now();
