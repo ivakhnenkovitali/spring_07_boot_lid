@@ -1,5 +1,4 @@
 import lombok.*;
-
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Getter
