@@ -6,10 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static by.itclass.constants.AppConst.*;
-
 public class TvDao {
     private static final String SELECT_ALL_TV = "SELECT * FROM tv";
-
     public List<Tv> selectAllTv() {
         var tvs = new ArrayList<Tv>();
         try (var cn = ConnectionManager.getConnection();
